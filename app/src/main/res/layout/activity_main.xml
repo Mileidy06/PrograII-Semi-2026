@@ -1,121 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@android:id/tabhost"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="20dp"
+android:background="#E3F2FD">
+
+
+<TextView
+    android:id="@+id/txtTitulo"
+    android:text="CONVERSOR"
+    android:textSize="22sp"
+    android:textStyle="bold"
+    android:textColor="#30628c"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="40dp"/>
+
+
+<TextView
+    android:id="@+id/lblTipo"
+    android:text="Tipo:"
+    android:textColor="#1565C0"
+    android:textSize="16sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="100dp"/>
+
+<Spinner
+    android:id="@+id/spnTipo"
+    android:entries="@array/tipo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="120dp"
+    android:background="#30628c"/>
+
+
+<TextView
+    android:id="@+id/lblDe"
+    android:text="De:"
+    android:textColor="#1565C0"
+    android:textSize="16sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="180dp"/>
+
+<Spinner
+    android:id="@+id/spnDe"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="200dp"
+    android:background="#30628c"/>
+
+
+<TextView
+    android:id="@+id/lblA"
+    android:text="A:"
+    android:textColor="#1565C0"
+    android:textSize="16sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="260dp"/>
+
+<Spinner
+    android:id="@+id/spnA"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="280dp"
+    android:background= "#30628c"/>
+android:layout_height="match_parent">
+
+
+<EditText
+    android:id="@+id/txtCantidad"
+    android:hint="Cantidad a convertir"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="340dp"
+    android:inputType="numberDecimal"
+    android:backgroundTint="#30628c"/>
+
+
+<TextView
+    android:id="@+id/lblRespuesta"
+    android:text="Respuesta:"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="#30628c"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="400dp"
+    android:layout_centerHorizontal="true"/>
+
+<Button
+    android:id="@+id/btnConvertir"
+    android:text="CONVERTIR"
+    android:textColor="#FFFFFF"
+    android:textSize="18sp"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="450dp"
+    android:background="#30628c"/>
+
+</RelativeLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+<TabWidget
+android:id="@android:id/tabs"
+android:layout_width="match_parent"
+android:layout_height="80dp"
+android:background="#F54927" />
+
+<FrameLayout
+android:id="@android:id/tabcontent"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+
+<RelativeLayout
+    android:id="@+id/agua"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:padding="20dp"
+    android:background="#FFFFFF">
 
     <TextView
-        android:id="@+id/lblNum1"
+        android:id="@+id/txtTituloAgua"
+        android:text="Medidor de agua consumida"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Num 1: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.172" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
 
     <EditText
-        android:id="@+id/textNum1"
+        android:id="@+id/etMetros"
+        android:hint="METROS CONSUMIDOS"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="80dp"
-        android:hint="Escribir un numero"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
-
-    <TextView
-        android:id="@+id/lblNum2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Num 2: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.044"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.262" />
-
-    <EditText
-        android:id="@+id/textNum2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="80dp"
-        android:hint="Escribir un numero"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.593"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.188" />
-
-    <TextView
-        android:id="@+id/lblRespuesta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Respuesta:? "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.105"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
-    <RadioGroup
-        android:id="@+id/optOpciones"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalcular"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNum2"
-        app:layout_constraintVertical_bias="0.483">
-
-        <RadioButton
-            android:id="@+id/optSuma"
-            android:checked="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SUMA" />
-
-        <RadioButton
-            android:id="@+id/optResta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="RESTAR" />
-
-        <RadioButton
-            android:id="@+id/optMultiplicar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="MULTIPLICACION" />
-
-        <RadioButton
-            android:id="@+id/optDividir"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DIVISION" />
-    </RadioGroup>
+        android:layout_marginTop="120dp"
+        android:inputType="numberDecimal"
+        android:backgroundTint="#000000"/>
 
     <Button
         android:id="@+id/btnCalcular"
+        android:text="CALCULAR"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="80dp"
-        android:hint="Calcular"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.396" />
+        android:layout_marginTop="180dp"
+        android:background="#000000"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvResultado"
+        android:text="RESULTADO:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
+
+<RelativeLayout
+    android:id="@+id/AREA"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/txtTitulo"
+        android:text="CONVERSOR DE ÁREA"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+    <TextView
+        android:id="@+id/lblDe"
+        android:text="DE:"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"/>
+
+    <Spinner
+        android:id="@+id/spnDe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:entries="@array/unidades_area"
+        android:backgroundTint="#000000"/>
+
+    <TextView
+        android:id="@+id/lblA"
+        android:text="A:"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="210dp"/>
+
+    <Spinner
+        android:id="@+id/spnA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:entries="@array/unidades_area"
+        android:backgroundTint="#000000"/>
+
+    <EditText
+        android:id="@+id/etArea"
+        android:hint="CANTIDAD A CONVERTIR"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textColorHint="#555555"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:inputType="numberDecimal"
+        android:backgroundTint="#000000"/>
+
+    <!-- BOTÓN MORADO -->
+    <Button
+        android:id="@+id/btnConvertir"
+        android:text="CONVERTIR"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:background="#6A0DAD"/>
+
+    <TextView
+        android:id="@+id/tvResultadoArea"
+        android:text="RESULTADO:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="430dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
+
+</FrameLayout>
+
+    </LinearLayout>
+    </TabHost>
